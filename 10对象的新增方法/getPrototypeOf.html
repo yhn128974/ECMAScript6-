@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //   Object.getPrototypeOf() § ⇧
+    // 该方法与Object.setPrototypeOf方法配套，用于读取一个对象的原型对象。
+
+    // Object.getPrototypeOf(obj);
+    // 下面是一个例子。
+
+    // function Rectangle() {
+    //   // ...
+    // }
+
+    // const rec = new Rectangle();
+
+    // Object.getPrototypeOf(rec) === Rectangle.prototype
+    // // true
+
+    // Object.setPrototypeOf(rec, Object.prototype);
+    // Object.getPrototypeOf(rec) === Rectangle.prototype
+    // // false
+    // 如果参数不是对象，会被自动转为对象。
+
+    // // 等同于 Object.getPrototypeOf(Number(1))
+    // Object.getPrototypeOf(1)
+    // // Number {[[PrimitiveValue]]: 0}
+
+    // // 等同于 Object.getPrototypeOf(String('foo'))
+    // Object.getPrototypeOf('foo')
+    // // String {length: 0, [[PrimitiveValue]]: ""}
+
+    // // 等同于 Object.getPrototypeOf(Boolean(true))
+    // Object.getPrototypeOf(true)
+    // // Boolean {[[PrimitiveValue]]: false}
+
+    // Object.getPrototypeOf(1) === Number.prototype // true
+    // Object.getPrototypeOf('foo') === String.prototype // true
+    // Object.getPrototypeOf(true) === Boolean.prototype // true
+    // 如果参数是undefined或null，它们无法转为对象，所以会报错。
+
+    // Object.getPrototypeOf(null)
+    // // TypeError: Cannot convert undefined or null to object
+
+    // Object.getPrototypeOf(undefined)
+    // // TypeError: Cannot convert undefined or null to object
+  </script>
+</html>
