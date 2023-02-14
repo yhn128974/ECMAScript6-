@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // function * gen(){
+    //     console.log(`hello generator`);
+    // }
+    // let iterator=gen();
+    // iterator.next();
+
+    // function* gen() {
+    //   console.log(111);
+    //   let two=yield 'one'  ;
+
+    //   console.log(two);
+    //   console.log(222);
+    //   let three=yield 'two';
+    //   console.log(three);
+    //   console.log(333);
+    //   yield 'three';
+    //   console.log (444);
+    // }
+
+    // let iterator = gen();
+    // console.log(iterator.next());
+    // console.log(iterator.next('bbb'));
+    // console.log(iterator.next('ccc'));
+
+    function getorder() {
+      setTimeout(() => {
+        let data = "订单数据";
+        iterator.next(data);
+      }, 1000);
+    }
+
+    function getGoods(res) {
+      setTimeout(() => {
+        let data = "商品数据"+res;
+        iterator.next(data);
+      }, 1000);
+    }
+
+    function getuser(res) {
+      setTimeout(() => {
+        let data = "用户数据"+res;
+        iterator.next(data);
+      }, 1000);
+    }
+
+    function * gen() {
+      let order = yield getorder();
+     console.log(order);
+      let goods = yield getGoods(order);
+      console.log(goods);
+      let user = yield getuser(goods);
+      console.log(user);
+    }
+
+    let iterator = gen();
+    iterator.next();
+
+
+  </script>
+</html>

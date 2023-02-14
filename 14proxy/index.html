@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">proxy</div>
+  </body>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      align-content: center;
+      text-align: center;
+    }
+  </style>
+  <script>
+    let person = {
+      uname: "zhangsan",
+    };
+    let proxy = new Proxy(person, {
+      get: function (target, propKey) {
+        if (propKey in target) {
+          return target[propKey];
+        } else {
+          throw new Error(`Prop name：${propKey} is not exist`);
+        }
+      },
+    });
+    
+    console.log(proxy.uname);
+    console.log(proxy.age);
+
+  </script>
+</html>

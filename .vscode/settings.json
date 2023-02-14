@@ -1,3 +1,4 @@
 {
-    "chatgpt.method": "GPT3 OpenAI API Key"
+    "chatgpt.method": "GPT3 OpenAI API Key",
+    "prettier.useEditorConfig": false
 }

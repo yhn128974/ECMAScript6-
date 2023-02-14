@@ -751,3 +751,57 @@
 //   foo(); // 2
 // }
 // 上面代码通过指定Symbol.unscopables属性，使得with语法块不会在当前作用域寻找foo属性，即foo将指向外层作用域的变量。
+
+
+//创建symbol
+// let s=Symbol();
+// console.log(s,typeof s);
+
+// let s1=Symbol("longyou")
+// let s2=Symbol("longyou")
+// console.log(s1===s2);
+
+
+// let s3=Symbol.for("shanghai")
+// let s4=Symbol.for("shanghai")
+// console.log(s3===s4);
+ 
+
+// let game={
+//     //  un(){
+//     //     console.log(`un`)
+//     //  },
+//      down(){
+//       console.log('down');
+//      },
+//      [Symbol('say')]:function(){
+//         console.log("I can speacking");
+//      },
+//      [Symbol('zhibao')]:function(){
+//         log("I can boom!!!");
+//      }
+// }
+
+// let methods={
+//     un:Symbol('un'),
+//     down:Symbol('down')
+// }
+
+// game[methods.un]=function(){
+//     console.log(`this is a function of un `);
+// }
+
+// game[methods.down]=function(){
+//     console.log(`this is a function of down `);
+// }
+
+// game[methods.down]();
+
+const arr=[1,2,3]
+const arr2=[4,5,6]
+arr2[Symbol.isConcatSpreadable]=false;
+console.log(arr.concat(arr2))
+
+
+ 
+
